@@ -39,14 +39,13 @@ const quotes = [
 ];
 
 
-
 /***
  * `getRandomQuote` function
 ***/
 // This makes sure that the same number doesn't come up twice
+// This will generate a random index number for the quote and return
 let randomNumber;
 let savedNumber;
-// This will generate a random index number for the quote and return
 const getRandomQuote = () => {
     do {
     randomNumber = Math.floor(Math.random() * quotes.length); 
