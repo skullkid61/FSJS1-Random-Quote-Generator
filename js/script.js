@@ -17,7 +17,7 @@ const quotes = [
     source: 'Andy Dufresne',
     citation: 'The Shawshank Redemption',
     year: 1994,
-    tags: 'movie', 'prison'
+    tags: ['movie', 'prison']
   },
   {
     quote: 'The first step toward success is taken when you refuse to be a captive of the environment in which you first find yourself',
@@ -35,20 +35,30 @@ const quotes = [
     quote: 'When I dare to be powerful – to use my strength in the service of my vision, then it becomes less and less important whether I am afraid.',
     source: 'Audre Lorde',
   }
-]
+];
 
 
 
 /***
  * `getRandomQuote` function
 ***/
+// This will generate a random index number for the quote and return
+function getRandomQuote () {
+  const random = Math.floor(Math.random() * quotes.length);
+  return quotes[random];
+}
 
 
 
 /***
  * `printQuote` function
 ***/
-
+function printQuote () {
+  const quote = getRandomQuote();
+  const quoteBox = document.querySelector('#quote-box');
+  quoteBox.innerHTML = `<p class="quote">${quote.quote}</p>
+  <p class="source">${quote.source}<span class="citation">${quote.citation}</span><span class="year">${quote.year}</span></p>`
+}
 
 
 /***
